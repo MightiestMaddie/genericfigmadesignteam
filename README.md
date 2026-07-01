@@ -30,6 +30,7 @@ template is specifically the greenfield starting point.
 ├── README.md                 # This file
 ├── docs/
 │   ├── startup.md            # Day-zero guide: bootstrapping an empty file
+│   ├── foundations.md        # How to build the tokens: color/spacing/radii variables, styles, effects (with API recipes)
 │   └── workflow.md           # Daily loop: roles, candidate lifecycle, reconcile, commit
 └── .claude/
     ├── commands/

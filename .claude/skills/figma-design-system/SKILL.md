@@ -38,7 +38,10 @@ button, input, badge, dialog, table cell, sidebar, etc. from scratch.
 ## Foundations first (the greenfield order of operations)
 
 On a new file, nothing can be reused until the **foundations** exist. Build them in this order —
-a component built before its tokens exist will carry raw values you have to retrofit later.
+a component built before its tokens exist will carry raw values you have to retrofit later. The
+concrete Figma Plugin API recipe for every step here (hex→rgb, collections/modes, semantic
+aliasing, spacing/radii scopes, effect + text styles) is in
+[`docs/foundations.md`](../../../docs/foundations.md).
 
 1. **Variable collections & modes.** Create the collections named in `PROJECT.md`
    (recommended: a **Brand** collection, a broad **TailwindCSS**-style palette, and a **Mode**

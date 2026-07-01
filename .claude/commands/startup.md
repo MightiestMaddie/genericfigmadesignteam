@@ -46,7 +46,10 @@ the decided values into `PROJECT.md` (brand table) **after** the human confirms.
 Figma in this step.
 
 ### 3. Establish foundations in Figma (gate before writing)
-Show the human the exact plan, then build **in this order** (skill: "Foundations first"):
+Follow **[`docs/foundations.md`](../../docs/foundations.md)** — it has the exact Figma Plugin API
+recipe for every step below (hex→rgb conversion, collections/modes, primitive vs semantic aliasing,
+spacing/radii scopes, effect styles, and font-loading for text styles). Show the human the exact
+plan, then build **in this order** (skill: "Foundations first"):
 1. **Variable collections & modes** — recommended: `Brand`, `TailwindCSS` (broad palette),
    `Mode` (light/dark `base/*`). Use the names you'll record in `PROJECT.md`.
 2. **Color variables** — brand + neutrals + semantic accents.

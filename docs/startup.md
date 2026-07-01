@@ -21,6 +21,9 @@ Until the foundations exist, there's nothing to consume — so bootstrap comes f
 - Optionally: your brand — a primary color, fonts, and any reference screenshot or logo. If you
   don't have one yet, the team ships a sensible **neutral default** you can accept and rebrand
   later.
+- **The fonts you'll use must be available in the Figma file** (e.g. Inter, and a heading font like
+  Geist). Text styles can't be created for a font Figma can't load — add/enable them before
+  bootstrapping. See [foundations.md](foundations.md) for the details.
 
 Enable **agent teams** if you'll run 3+ agents at once (optional early on):
 ```bash
@@ -46,7 +49,10 @@ for your go before touching Figma or the records):
    neutral default wholesale. Decided values are written to [`PROJECT.md`](../PROJECT.md).
 3. **Foundations** — creates variable collections, color variables, the spacing scale, radii,
    effect styles (a `Soft` card shadow), and text styles. **This comes before any component** —
-   building components first would bake in raw values.
+   building components first would bake in raw values. The exact mechanics (what variables get
+   created, how, and how to verify them in Figma's Local variables panel) are in
+   **[foundations.md](foundations.md)** — read it if you want to understand or check what's being
+   built.
 4. **Components page + Sections** — creates the `Components` page and its Sections (Actions, Inputs,
    Navigation, Data Display, …), recording each node id in `PROJECT.md`.
 5. **Core component set** — builds the minimum primitives that make real screens buildable
