@@ -29,6 +29,8 @@ template is specifically the greenfield starting point.
 ├── CANDIDATES.md             # Candidate register — starts empty
 ├── README.md                 # This file
 ├── docs/
+│   ├── setup-guide.md        # START HERE — illustrated, plain-language setup + daily-use guide
+│   ├── diagrams/             # Excalidraw diagrams (.excalidraw sources + rendered .svg)
 │   ├── startup.md            # Day-zero guide: bootstrapping an empty file
 │   ├── prompts.md            # What to tell the Librarian to set the brand + build foundations (copy-paste prompts + why)
 │   ├── foundations.md        # How to build the tokens: color/spacing/radii variables, styles, effects (with API recipes)
@@ -48,6 +50,9 @@ template is specifically the greenfield starting point.
 ```
 
 ## Setup
+
+> **New here?** [docs/setup-guide.md](docs/setup-guide.md) is the illustrated, plain-language
+> version of everything below — with diagrams of the team, the `/startup` steps, and the daily loop.
 
 ### Requirements
 

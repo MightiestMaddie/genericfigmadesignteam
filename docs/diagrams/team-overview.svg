@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 -8 1048 604" width="1048" height="604">
+<rect x="6" y="-8" width="1048" height="604" fill="#ffffff"/>
+<text x="30" y="40.9" font-size="30" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1e1e1e" text-anchor="start">The design team at a glance</text>
+<text x="30" y="72.0" font-size="14.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#868e96" text-anchor="start">One human, one Librarian, disposable page agents — and a Figma file only the Librarian may reshape.</text>
+<rect x="400" y="100" width="260" height="60" rx="10" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="530.0" y="122.9" font-size="18" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1971c2" text-anchor="middle">YOU — the design lead</text>
+<text x="530.0" y="144.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#868e96" text-anchor="middle">approve plans · decide candidates</text>
+<rect x="30" y="200" width="430" height="300" rx="10" fill="#f8f9fa" stroke="#495057" stroke-width="1.5"/>
+<text x="48" y="220.8" font-size="13" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#868e96" text-anchor="start">CLAUDE CODE — this repo</text>
+<rect x="55" y="240" width="380" height="64" rx="10" fill="#f3d9fa" stroke="#862e9c" stroke-width="2"/>
+<text x="245.0" y="262.1" font-size="17" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#862e9c" text-anchor="middle">Librarian</text>
+<text x="245.0" y="284.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#868e96" text-anchor="middle">the ONLY writer of the library, styles &amp; records</text>
+<rect x="55" y="330" width="180" height="58" rx="10" fill="#fff9db" stroke="#f59f00" stroke-width="2"/>
+<text x="145.0" y="350.4" font-size="15" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#b45309" text-anchor="middle">Page agent A</text>
+<text x="145.0" y="372.0" font-size="12" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#868e96" text-anchor="middle">builds one screen</text>
+<rect x="255" y="330" width="180" height="58" rx="10" fill="#fff9db" stroke="#f59f00" stroke-width="2"/>
+<text x="345.0" y="350.4" font-size="15" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#b45309" text-anchor="middle">Page agent B</text>
+<text x="345.0" y="372.0" font-size="12" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#868e96" text-anchor="middle">one per page</text>
+<rect x="55" y="414" width="380" height="62" rx="10" fill="#f8f9fa" stroke="#495057" stroke-width="2"/>
+<text x="245.0" y="432.6" font-size="14" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1e1e1e" text-anchor="middle">Records in git</text>
+<text x="245.0" y="454.4" font-size="12.5" font-family='"Cascadia Code", Menlo, Consolas, monospace' fill="#868e96" text-anchor="middle">PROJECT.md · SKILL.md · CANDIDATES.md</text>
+<rect x="600" y="200" width="430" height="300" rx="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1.5"/>
+<text x="618" y="220.8" font-size="13" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#2f9e44" text-anchor="start">YOUR FIGMA FILE</text>
+<rect x="625" y="240" width="380" height="64" rx="10" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+<text x="815.0" y="261.3" font-size="16" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1b6e30" text-anchor="middle">Components page — the library</text>
+<text x="815.0" y="284.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#495057" text-anchor="middle">variables · text styles · components</text>
+<rect x="625" y="330" width="180" height="58" rx="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="715.0" y="360.4" font-size="15" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1b6e30" text-anchor="middle">Screen page A</text>
+<rect x="825" y="330" width="180" height="58" rx="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="915.0" y="360.4" font-size="15" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1b6e30" text-anchor="middle">Screen page B</text>
+<text x="815.0" y="408.0" font-size="12" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#b45309" text-anchor="middle">candidates live here — page-local, never in the library</text>
+<path d="M 430.0,160.0 L 255.0,240.0" fill="none" stroke="#1971c2" stroke-width="2" stroke-linecap="round"/>
+<polygon points="255.0,240.0 262.0,231.5 266.0,240.2" fill="#1971c2"/>
+<text x="270.0" y="186.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#1971c2" text-anchor="middle">gives the go</text>
+<path d="M 435.0,272.0 L 625.0,272.0" fill="none" stroke="#862e9c" stroke-width="2" stroke-linecap="round"/>
+<polygon points="625.0,272.0 615.1,276.8 615.1,267.2" fill="#862e9c"/>
+<text x="550.0" y="288.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#862e9c" text-anchor="middle">only writer</text>
+<path d="M 435.0,359.0 L 625.0,359.0" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+<polygon points="625.0,359.0 615.1,363.8 615.1,354.2" fill="#b45309"/>
+<text x="530.0" y="376.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#b45309" text-anchor="middle">instances only</text>
+<path d="M 430.0,330.0 L 560.0,160.0" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-dasharray="8 6"/>
+<polygon points="560.0,160.0 557.8,170.8 550.2,165.0" fill="#b45309"/>
+<text x="472" y="316.4" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#b45309" text-anchor="start">raises</text>
+<text x="472" y="332.0" font-size="12.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#b45309" text-anchor="start">candidates</text>
+<rect x="30" y="524" width="1000" height="48" rx="10" fill="#ffe3e3" stroke="#c92a2a" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="530.0" y="548.0" font-size="14.5" font-family='Virgil, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' fill="#c92a2a" text-anchor="middle">Golden rule: pages isolate layouts, NOT the library — the library has exactly one writer.</text>
+</svg>
