@@ -1,0 +1,146 @@
+<svg viewBox="0 0 980 700" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <marker id="arrAmber" markerWidth="10" markerHeight="10" refX="7.5" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7.5,3 L0,6 Z" fill="#b45309"/>
+    </marker>
+    <marker id="arrDash" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#059669"/>
+    </marker>
+    <marker id="arrGs" markerWidth="9" markerHeight="9" refX="2" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M7,0 L0,3 L7,6 Z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="34" y="34" font-size="21" font-weight="700" fill="#0f172a">Design-system agent team — single-writer library</text>
+  <text x="34" y="56" font-size="13" fill="#64748b">One librarian owns every file-level change; page agents consume the library and request new primitives.</text>
+
+  <!-- ===== LEFT PANEL: AGENT TEAM ===== -->
+  <rect x="28" y="78" width="412" height="372" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="44" y="98" font-size="11" font-weight="700" letter-spacing="1" fill="#94a3b8">CLAUDE CODE AGENT TEAM</text>
+
+  <!-- Lead -->
+  <rect x="130" y="106" width="210" height="44" rx="9" fill="#eef2ff" stroke="#6366f1"/>
+  <text x="235" y="133" font-size="14" font-weight="600" fill="#3730a3" text-anchor="middle">Lead / Orchestrator</text>
+
+  <!-- Coordination bar -->
+  <rect x="58" y="172" width="352" height="42" rx="9" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="234" y="198" font-size="13" font-weight="600" fill="#334155" text-anchor="middle">Shared task list + mailbox</text>
+
+  <!-- Librarian -->
+  <rect x="58" y="250" width="168" height="92" rx="9" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="142" y="276" font-size="14" font-weight="700" fill="#92400e" text-anchor="middle">Librarian</text>
+  <text x="142" y="296" font-size="11.5" fill="#92400e" text-anchor="middle">single writer</text>
+  <text x="142" y="316" font-size="10.5" fill="#a16207" text-anchor="middle">owns all file-level</text>
+  <text x="142" y="330" font-size="10.5" fill="#a16207" text-anchor="middle">changes + the skill</text>
+
+  <!-- Page agents container -->
+  <rect x="250" y="240" width="170" height="200" rx="9" fill="#f0fdfa" stroke="#14b8a6"/>
+  <text x="335" y="260" font-size="12.5" font-weight="700" fill="#115e59" text-anchor="middle">Page agents</text>
+  <rect x="264" y="272" width="142" height="44" rx="7" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="335" y="293" font-size="11.5" font-weight="600" fill="#115e59" text-anchor="middle">Agent A</text>
+  <text x="335" y="308" font-size="10" fill="#0f766e" text-anchor="middle">consumes · lays out Page 1</text>
+  <rect x="264" y="324" width="142" height="44" rx="7" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="335" y="345" font-size="11.5" font-weight="600" fill="#115e59" text-anchor="middle">Agent B</text>
+  <text x="335" y="360" font-size="10" fill="#0f766e" text-anchor="middle">consumes · lays out Page 2</text>
+  <rect x="264" y="376" width="142" height="44" rx="7" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="335" y="397" font-size="11.5" font-weight="600" fill="#115e59" text-anchor="middle">Agent C</text>
+  <text x="335" y="412" font-size="10" fill="#0f766e" text-anchor="middle">consumes · lays out Page 3</text>
+
+  <!-- ===== RIGHT PANEL: FIGMA FILE ===== -->
+  <rect x="470" y="78" width="482" height="372" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="486" y="98" font-size="11" font-weight="700" letter-spacing="1" fill="#94a3b8">FIGMA — ONE SHARED DOCUMENT</text>
+
+  <!-- Shared library zone -->
+  <rect x="488" y="110" width="446" height="104" rx="9" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="502" y="132" font-size="13" font-weight="700" fill="#92400e">Shared library — SINGLE WRITER (file-global)</text>
+  <rect x="502" y="146" width="130" height="50" rx="7" fill="#fef3c7" stroke="#fbbf24"/>
+  <text x="567" y="176" font-size="11.5" fill="#92400e" text-anchor="middle">Main components</text>
+  <rect x="644" y="146" width="120" height="50" rx="7" fill="#fef3c7" stroke="#fbbf24"/>
+  <text x="704" y="176" font-size="11.5" fill="#92400e" text-anchor="middle">Variants</text>
+  <rect x="776" y="146" width="144" height="50" rx="7" fill="#fef3c7" stroke="#fbbf24"/>
+  <text x="848" y="170" font-size="11.5" fill="#92400e" text-anchor="middle">Variables /</text>
+  <text x="848" y="185" font-size="11.5" fill="#92400e" text-anchor="middle">tokens</text>
+
+  <!-- Pages zone -->
+  <rect x="488" y="228" width="446" height="206" rx="9" fill="#f0fdfa" stroke="#99f6e4"/>
+  <text x="502" y="250" font-size="13" font-weight="700" fill="#115e59">Pages — partitioned (parallel-safe)</text>
+  <rect x="502" y="262" width="134" height="160" rx="7" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="569" y="288" font-size="12" font-weight="600" fill="#115e59" text-anchor="middle">Page 1</text>
+  <text x="569" y="306" font-size="10" fill="#0f766e" text-anchor="middle">Agent A</text>
+  <rect x="644" y="262" width="134" height="160" rx="7" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="711" y="288" font-size="12" font-weight="600" fill="#115e59" text-anchor="middle">Page 2</text>
+  <text x="711" y="306" font-size="10" fill="#0f766e" text-anchor="middle">Agent B</text>
+  <rect x="786" y="262" width="134" height="160" rx="7" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="853" y="288" font-size="12" font-weight="600" fill="#115e59" text-anchor="middle">Page 3</text>
+  <text x="853" y="306" font-size="10" fill="#0f766e" text-anchor="middle">Agent C</text>
+
+  <!-- ===== BOTTOM LEFT: reconciliation explainer ===== -->
+  <rect x="28" y="470" width="412" height="120" rx="12" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="44" y="494" font-size="13" font-weight="700" fill="#065f46">/goal + /loop reconciliation (librarian-owned)</text>
+  <text x="44" y="516" font-size="11" fill="#047857">Goal: every shared component &amp; variant has a SKILL.md</text>
+  <text x="44" y="532" font-size="11" fill="#047857">entry, and every entry maps to a real component.</text>
+  <text x="44" y="554" font-size="11" fill="#047857">Loop scans the Figma library, updates the skill, and</text>
+  <text x="44" y="570" font-size="11" fill="#047857">flags drift — a backstop, not the primary writer.</text>
+
+  <!-- ===== BOTTOM RIGHT: git repo ===== -->
+  <rect x="470" y="470" width="482" height="120" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="486" y="492" font-size="11" font-weight="700" letter-spacing="1" fill="#94a3b8">GIT REPO + WORKTREES</text>
+  <rect x="488" y="502" width="210" height="70" rx="8" fill="#f5f3ff" stroke="#a78bfa"/>
+  <text x="593" y="532" font-size="13" font-weight="600" fill="#5b21b6" text-anchor="middle">CLAUDE.md</text>
+  <text x="593" y="550" font-size="10" fill="#7c3aed" text-anchor="middle">standing project rules</text>
+  <rect x="712" y="502" width="222" height="70" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="823" y="532" font-size="13" font-weight="700" fill="#5b21b6" text-anchor="middle">SKILL.md</text>
+  <text x="823" y="550" font-size="10" fill="#7c3aed" text-anchor="middle">design-system source of truth</text>
+
+  <!-- ===== CONNECTORS ===== -->
+  <!-- Lead -> coordination -->
+  <line x1="235" y1="150" x2="235" y2="170" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- coordination -> librarian -->
+  <line x1="120" y1="214" x2="120" y2="248" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="126" y="236" font-size="9.5" fill="#475569">claim</text>
+  <!-- coordination <-> page agents (double) -->
+  <line x1="335" y1="214" x2="335" y2="238" stroke="#334155" stroke-width="2" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="344" y="232" font-size="9.5" fill="#475569">claim / request primitive</text>
+
+  <!-- librarian -> shared library (WRITE, amber, single writer) -->
+  <line x1="226" y1="268" x2="486" y2="150" stroke="#b45309" stroke-width="2.6" marker-end="url(#arrAmber)"/>
+  <text x="300" y="200" font-size="10.5" font-weight="600" fill="#b45309" transform="rotate(-24 300 200)">writes library · single writer</text>
+
+  <!-- page agents -> shared library (READ, dashed) -->
+  <line x1="420" y1="284" x2="486" y2="196" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrDash)"/>
+  <text x="430" y="232" font-size="9.5" fill="#64748b" transform="rotate(-50 430 232)">instance (read)</text>
+
+  <!-- page agents -> pages (WRITE layouts) -->
+  <line x1="420" y1="345" x2="486" y2="345" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="430" y="338" font-size="9.5" fill="#475569">lay out frames</text>
+
+  <!-- librarian -> repo (writes skill + rules) elbow -->
+  <polyline points="108,342 108,452 462,452 486,452" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="250" y="446" font-size="9.5" fill="#475569">writes skill + rules</text>
+
+  <!-- reconciliation: shared library <-> SKILL.md (right margin elbow, double) -->
+  <polyline points="934,170 950,170 950,460 950,500 880,500" fill="none" stroke="#059669" stroke-width="2.2" stroke-dasharray="2 0" marker-start="url(#arrGs)" marker-end="url(#arrG)"/>
+  <text x="958" y="330" font-size="10.5" font-weight="600" fill="#059669" transform="rotate(90 958 330)">/goal + /loop · compare &amp; sync</text>
+
+  <!-- ===== LEGEND ===== -->
+  <text x="34" y="624" font-size="11" font-weight="700" letter-spacing="0.5" fill="#94a3b8">LEGEND</text>
+  <rect x="100" y="615" width="14" height="11" rx="3" fill="#fef3c7" stroke="#d97706"/>
+  <text x="120" y="624" font-size="10.5" fill="#475569">single-writer (components · variants · tokens)</text>
+  <rect x="360" y="615" width="14" height="11" rx="3" fill="#ccfbf1" stroke="#14b8a6"/>
+  <text x="380" y="624" font-size="10.5" fill="#475569">page-scoped (partitioned)</text>
+  <line x1="560" y1="620" x2="592" y2="620" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="598" y="624" font-size="10.5" fill="#475569">write / own</text>
+  <line x1="690" y1="620" x2="722" y2="620" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrDash)"/>
+  <text x="728" y="624" font-size="10.5" fill="#475569">read / instance</text>
+
+  <!-- Footnote -->
+  <text x="34" y="660" font-size="11" fill="#64748b">Pages isolate layouts, not the library. Components, variants &amp; tokens are file-global — that's why one role owns every library write,</text>
+  <text x="34" y="676" font-size="11" fill="#64748b">and worktrees only protect the skill files, never the shared Figma document.</text>
+</svg>
