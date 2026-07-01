@@ -43,7 +43,8 @@ Interview briefly — or read it from the human's notes / a reference screenshot
 
 Offer the **neutral default** from the skill's "Default foundations" as a one-click accept. Write
 the decided values into `PROJECT.md` (brand table) **after** the human confirms. Nothing goes into
-Figma in this step.
+Figma in this step. (If the human wants examples of what to provide, point them at
+[`docs/prompts.md`](../../docs/prompts.md).)
 
 ### 3. Establish foundations in Figma (gate before writing)
 Follow **[`docs/foundations.md`](../../docs/foundations.md)** — it has the exact Figma Plugin API

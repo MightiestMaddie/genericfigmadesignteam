@@ -47,6 +47,9 @@ for your go before touching Figma or the records):
    the file so you confirm it's the right, empty one. *No writes yet.*
 2. **Gather the brand** — a short interview (or reads your notes / a reference). You can accept the
    neutral default wholesale. Decided values are written to [`PROJECT.md`](../PROJECT.md).
+   **Not sure what to tell it?** [prompts.md](prompts.md) has copy-paste prompts for every
+   situation (full spec, logo/screenshot, just-a-color, or nothing yet) and explains what each
+   input is for.
 3. **Foundations** — creates variable collections, color variables, the spacing scale, radii,
    effect styles (a `Soft` card shadow), and text styles. **This comes before any component** —
    building components first would bake in raw values. The exact mechanics (what variables get

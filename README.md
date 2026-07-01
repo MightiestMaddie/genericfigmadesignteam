@@ -30,6 +30,7 @@ template is specifically the greenfield starting point.
 ├── README.md                 # This file
 ├── docs/
 │   ├── startup.md            # Day-zero guide: bootstrapping an empty file
+│   ├── prompts.md            # What to tell the Librarian to set the brand + build foundations (copy-paste prompts + why)
 │   ├── foundations.md        # How to build the tokens: color/spacing/radii variables, styles, effects (with API recipes)
 │   ├── setup-system.excalidraw  # Editable diagram of the whole setup flow (open at excalidraw.com)
 │   └── workflow.md           # Daily loop: roles, candidate lifecycle, reconcile, commit

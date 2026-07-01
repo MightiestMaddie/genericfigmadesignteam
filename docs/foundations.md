@@ -10,6 +10,10 @@ rhythm (or accept the neutral default in the [skill](../.claude/skills/figma-des
 Plugin API in the file. The code below is exactly what it runs — you don't have to type it, but it
 tells you precisely what's being built, and you can read it back to verify.
 
+> **What do you actually tell the Librarian to make all this happen?** See
+> [prompts.md](prompts.md) — copy-paste prompts for supplying the brand and driving the build, plus
+> what each input is for and why it's needed.
+
 > **Order matters.** Build tokens in the order below, and build **all of them before any
 > component**. A component created before its variables exist bakes in raw hex/px that you then
 > have to retrofit. Foundations first, always.
