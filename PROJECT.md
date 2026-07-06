@@ -15,11 +15,11 @@ id, or brand value. When you start a new project, this is the file you fill in �
 
 | Field                 | Value                                                                                     |
 | --------------------- | ----------------------------------------------------------------------------------------- |
-| **File name**         | `<FILL IN — e.g. "Acme — Product Designs">`                                               |
-| **File key**          | `<FILL IN — the 22-char key from the URL: figma.com/design/<KEY>/...>`                    |
-| **URL name segment**  | `<FILL IN — the slug after the key, url-encoded, e.g. Acme-%E2%80%94-Product-Designs>`    |
-| **Library page**      | `<FILL IN node id — e.g. 1:2 — the "Components" page that is the single source of truth>` |
-| **Library page name** | `Components` *(rename if you prefer)*                                                     |
+| **File name**         | `Claude Test — Website`                                                                   |
+| **File key**          | `KwsqCVnJzicChzUpwz55cS`                                                                  |
+| **URL name segment**  | `Claude-Test---Website`                                                                   |
+| **Library page**      | `5:2`                                                                                     |
+| **Library page name** | `Components`                                                                              |
 
 **Node-URL format** (used in every `Sources:` list and candidate row): `https://www.figma.com/design/<FILE KEY>/<URL NAME SEGMENT>?node-id=<A>-<B>` (convert a node id `A:B` → `A-B`).
 
@@ -33,11 +33,11 @@ Organism is only as good as the Molecules and Atoms it's built from.
 
 | Section        | Node id | Tier definition                                                                                          | Holds (starter examples)                                                                     |
 | -------------- | ------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Atoms**      | `<id>`  | Smallest indivisible UI pieces. Cannot be broken down further without ceasing to be useful on their own.   | Button, Input, Textarea, Checkbox, Chip, Badge, Icon                                            |
-| **Molecules**  | `<id>`  | A small, functional group of Atoms working together as one reusable unit.                                  | Select (Input + listbox), Search Bar (Input + Button), Table Cell, Nav Item, Toast, Inline Alert, Empty State, Section Header |
-| **Organisms**  | `<id>`  | Distinct, complex sections composed of Molecules and/or Atoms — a recognizable piece of an interface.       | Sidebar, Page Header, Table (full, with cells + header row), Dialog, Card, Bottom Tab Bar        |
-| **Templates**  | `<id>`  | Page-level layout skeletons — placement of Organisms/Molecules with placeholder content, no real data.       | List Page Template, Detail Page Template, Form Dialog Template                                  |
-| **Sandbox / WIP** | `<id>` | Unfinished work — **never reused in real screens**.                                                        | —                                                                                               |
+| **Atoms**      | `5:3`   | Smallest indivisible UI pieces. Cannot be broken down further without ceasing to be useful on their own.   | Button, Input, Textarea, Checkbox, Chip, Badge, Icon                                            |
+| **Molecules**  | `5:4`   | A small, functional group of Atoms working together as one reusable unit.                                  | Select (Input + listbox), Search Bar (Input + Button), Table Cell, Nav Item, Toast, Inline Alert, Empty State, Section Header |
+| **Organisms**  | `5:5`   | Distinct, complex sections composed of Molecules and/or Atoms — a recognizable piece of an interface.       | Sidebar, Page Header, Table (full, with cells + header row), Dialog, Card, Bottom Tab Bar        |
+| **Templates**  | `5:6`   | Page-level layout skeletons — placement of Organisms/Molecules with placeholder content, no real data.       | List Page Template, Detail Page Template, Form Dialog Template                                  |
+| **Sandbox / WIP** | `5:7` | Unfinished work — **never reused in real screens**.                                                        | —                                                                                               |
 
 *(**Pages** — templates filled with real content — are not part of the library; they're what
 Page agents build on canvas from instances of the above.)*
@@ -57,22 +57,44 @@ the decided values here so humans and agents share one reference.
 
 | Foundation                 | Value                                                      |
 | --------------------------- | ---------------------------------------------------------- |
-| **Brand / primary color**  | `<hex>`                                                    |
-| **Primary — dark / hover** | `<hex>`                                                    |
-| **Primary — button bg**    | `<hex>`                                                    |
-| **Page background**        | `<hex>`                                                    |
-| **Surface / card**         | `<hex>`                                                    |
-| **Foreground text**        | `<hex>`                                                    |
-| **Muted / secondary text** | `<hex>`                                                    |
-| **Default border**         | `<hex>`                                                    |
-| **Input border**           | `<hex>`                                                    |
-| **Heading font family**    | `<e.g. Geist, Inter>`                                      |
-| **UI / body font family**  | `<e.g. Inter>`                                             |
-| **Spacing scale**          | `<e.g. 2, 4, 6, 8, 12, 16, 24, 32>`                        |
-| **Radii**                  | `<Small / Medium / Large / pill — e.g. 6 / 10 / 14 / 999>` |
-| **Card shadow ("Soft")**   | `<e.g. 0 10 20 rgba(...) @ 18%>`                           |
+| **Brand / primary color**  | `#2563eb`                                                  |
+| **Primary — dark / hover** | `#1d4ed8`                                                  |
+| **Primary — button bg**    | `#1e293b`                                                  |
+| **Page background**        | `#f8fafc`                                                  |
+| **Surface / card**         | `#ffffff`                                                  |
+| **Foreground text**        | `#18181b`                                                  |
+| **Muted / secondary text** | `#71717a`                                                  |
+| **Default border**         | `#e2e8f0`                                                  |
+| **Input border**           | `#cbd5e1`                                                  |
+| **Heading font family**    | `Inter`                                                    |
+| **UI / body font family**  | `Inter`                                                    |
+| **Spacing scale**          | `2, 4, 6, 8, 12, 16, 24, 32`                                |
+| **Radii**                  | `Small 6 / Medium 10 / Large 14 / Pill 999`                |
+| **Card shadow ("Soft")**   | `0 10 20 rgba(209,218,225,1) @ 18%`                        |
 
-**Variable collections in the file** *(names created by `/startup`)*: `<e.g. Brand, TailwindCSS, Mode>` — record the exact names so binding is unambiguous.
+**Variable collections in the file** *(names created by `/startup`)*: `Brand, TailwindCSS, Mode` — record the exact names so binding is unambiguous.
+
+**Platform:** multi-platform product — mobile-specific components use the `Mobile ...` prefix right after the tier prefix (e.g. `Atom / Mobile Button`).
+
+**Foundation IDs** *(for binding reference — see `figma-use` variable-patterns for lookup by name)*:
+
+| Item | ID |
+| --- | --- |
+| Brand collection | `VariableCollectionId:4:2` |
+| TailwindCSS collection | `VariableCollectionId:4:3` |
+| Mode collection | `VariableCollectionId:4:4` (Light `4:2`, Dark `4:3`) |
+| `base/foreground` | `VariableID:4:25` |
+| `base/muted-foreground` | `VariableID:4:26` |
+| `base/card` | `VariableID:4:27` |
+| `base/background` | `VariableID:4:28` |
+| `Border-Mid` | `VariableID:4:29` |
+| `Border-Dark` | `VariableID:4:30` |
+| `Primary` / `Primary-Dark` / `Primary-Light` / `Primary-Button-Bg` / `Page-Background` | `4:20` / `4:21` / `4:22` / `4:23` / `4:24` |
+| `spacing/2…32` | `4:31`–`4:38` |
+| `Radius/Small,Medium,Large,Pill` | `4:39`–`4:42` |
+| Effect style `Soft` | `S:6ba2fc10321c62bc801cdbb5ec8940f43cefbcba,` |
+| Effect style `Dialog` | `S:2c87670608c2e88ce3e2be2cc2ca26f67f737d77,` |
+| Text styles (heading-md, 2xl-semibold, lg-semibold, sm-semibold, sm-normal, xs-normal) | see `figma.getLocalTextStylesAsync()` by name |
 
 *(Foundations sit below Atoms in the hierarchy — they're the tokens Atoms bind to, not a tier
 of their own.)*
@@ -81,13 +103,13 @@ of their own.)*
 
 ## Status
 
-- [ ] Figma file connected (key + access verified)
-- [ ] Foundations created (color / spacing / radii variables, text styles, effect styles)
-- [ ] Components page + Atomic Sections created (Atoms, Molecules, Organisms, Templates)
-- [ ] Core Atom set built and published
-- [ ] Core Molecule set built and published
-- [ ] Core Organism set built and published
-- [ ] `SKILL.md` inventory seeded
+- [x] Figma file connected (key + access verified)
+- [x] Foundations created (color / spacing / radii variables, text styles, effect styles)
+- [x] Components page + Atomic Sections created (Atoms, Molecules, Organisms, Templates)
+- [x] Core Atom set built *(publish pending — human action in Figma UI)*
+- [x] Core Molecule set built *(publish pending)*
+- [x] Core Organism set built *(publish pending)*
+- [x] `SKILL.md` inventory seeded
 - [ ] First screen (Page) built from instances
 
 When every box is checked, the project is bootstrapped and you run the normal

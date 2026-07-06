@@ -117,12 +117,12 @@ Smallest indivisible pieces — bind directly to tokens, no other components as 
 
 | Component  | Node   | Variant properties                                                              |
 | ---------- | ------ | -------------------------------------------------------------------------------- |
-| **Atom / Button** | `<id>` | Type {Primary, Secondary, Destructive, Link} × State {Default, Hover, Disabled} |
-| **Atom / Input**    | `<id>` | State {Default, Focused, Error, Disabled} |
-| **Atom / Textarea** | `<id>` | State {Default, Focused, Error, Disabled} |
-| **Atom / Checkbox** | `<id>` | State {Unchecked, Checked, Indeterminate, Disabled} |
-| **Atom / Chip**     | `<id>` | Type {…} |
-| **Atom / Badge**    | `<id>` | Color {…} |
+| **Atom / Button** | `7:27` | Type {Primary, Secondary, Destructive, Link} × State {Default, Hover, Disabled} |
+| **Atom / Input**    | `7:36` | State {Default, Focused, Error, Disabled} |
+| **Atom / Textarea** | `7:45` | State {Default, Focused, Error, Disabled} |
+| **Atom / Checkbox** | `8:11` | State {Unchecked, Checked, Indeterminate, Disabled} |
+| **Atom / Chip**     | `8:16` | Type {Default, Selected} |
+| **Atom / Badge**    | `8:27` | Color {Neutral, Success, Danger, Warning, Info} |
 
 ### Molecules
 
@@ -130,14 +130,14 @@ Small groups of Atoms functioning as a single reusable unit.
 
 | Component  | Node   | Composed of                        | Variant properties |
 | ---------- | ------ | ------------------------------------ | ------------------- |
-| **Molecule / Select**         | `<id>` | Atom / Input + listbox items | State {Closed, Open, Hover, Selected} |
-| **Molecule / Tab**            | `<id>` | — | State {Default, Active, Hover} |
-| **Molecule / Table Cell · Badge** | `<id>` | Atom / Badge | — |
-| **Molecule / Toast**          | `<id>` | Atom / Badge/Icon + text | Status {Success, Warning, Error, Info} |
-| **Molecule / Inline Alert**   | `<id>` | Icon + text | Status {Info, Success, Warning, Error} |
-| **Molecule / Empty State**    | `<id>` | Icon + text + Atom / Button | — |
-| **Molecule / Section Header** | `<id>` | Text + optional Atom / Button | Action {None, Link} |
-| **Molecule / Nav / Item**     | `<id>` | Icon + text | State {Default, Active, Hover} |
+| **Molecule / Select**         | `9:21` | Atom / Input + Atom / Icon / ChevronDown + listbox | State {Closed, Open} |
+| **Molecule / Tab**            | `9:34` | Text + indicator | State {Default, Active, Hover} |
+| **Molecule / Table Cell**     | `11:57` | Text or Atom / Badge | Type {Text, Badge, Header} |
+| **Molecule / Toast**          | `10:37` | Atom / Icon (status-tinted) + text | Status {Success, Warning, Error, Info} |
+| **Molecule / Inline Alert**   | `10:61` | Atom / Icon + text on tinted panel | Status {Info, Success, Warning, Error} |
+| **Molecule / Empty State**    | `11:34` | Atom / Icon / Search + text + Atom / Button (Secondary) | — |
+| **Molecule / Section Header** | `11:49` | Text + optional Atom / Button (Link) | Action {None, Link} |
+| **Molecule / Nav / Item**     | `9:50` | Atom / Icon + text | State {Default, Active, Hover} |
 
 ### Organisms
 
@@ -145,11 +145,12 @@ Distinct, self-contained sections composed of Molecules and/or Atoms.
 
 | Component  | Node   | Composed of                        | Variant properties |
 | ---------- | ------ | ------------------------------------ | ------------------- |
-| **Organism / Card**       | `<id>` | Molecule/Atom children as needed | Header {With, Without} × Footer {With, Without} |
-| **Organism / Dialog**     | `<id>` | Header text + content + Atom / Button ×2 | — |
-| **Organism / Page Header**| `<id>` | Text + Atom / Button(s) | Layout {With Buttons, With Breadcrumbs, Without Buttons} |
-| **Organism / Sidebar**    | `<id>` | Molecule / Nav / Item, Group Label, Footer User | — |
-| **Organism / Table**      | `<id>` | Molecule / Table Cell variants | — |
+| **Organism / Card**       | `12:65` | Header + content + footer w/ Atom / Button ×2 | Header {With, Without} × Footer {With, Without} |
+| **Organism / Dialog**     | `13:44` | Header text + Atom / Icon / X + content + Atom / Button ×2 | — |
+| **Organism / Page Header**| `13:70` | Title + subtitle + Atom / Button ×2 | Layout {With Buttons, Without Buttons} |
+| **Organism / Table**      | `13:71` | Header row + 3 rows of Molecule / Table Cell | — |
+
+*(No Sidebar yet — raise as a candidate when a screen needs one.)*
 
 ### Templates
 
@@ -165,6 +166,11 @@ new project; add rows once 2+ real screens share a structure.
 Prefer a full **Lucide** icon library imported as components named `Atom / Icon / <PascalCase>`
 (24×24, stroke bound to a color var). Instance and override the stroke color; **scale the stroke
 with the size** (Lucide is drawn 24px/2px, so stroke ≈ `size ÷ 12`).
+
+Current set (stroke bound to `base/foreground`; retint per use): Check `6:8`, X `6:12`,
+ChevronDown `6:15`, ChevronRight `6:18`, Search `6:22`, Plus `6:26`, AlertCircle `6:31`,
+AlertTriangle `6:36`, Info `6:41`, CheckCircle `6:45`, Settings `6:49`, User `6:53`.
+Need another Lucide glyph? Raise a candidate (page agents) or add it here (Librarian).
 
 ### Sandbox / WIP
 
