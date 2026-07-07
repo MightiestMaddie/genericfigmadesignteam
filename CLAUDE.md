@@ -16,8 +16,8 @@ applies to everyone.
 
 ## Roles
 
-Exactly one **Librarian** and one or more **Page agents** per team. Know which you are before
-acting; if unsure, ask the lead.
+Exactly one **Librarian**, one or more **Page agents**, and optionally a **Reviewer** per
+team. Know which you are before acting; if unsure, ask the lead.
 
 - **Librarian** — the single writer of all *file-global* state. Owns the component library
   page, variables, text styles, effect styles, library publishing, and the design-system
@@ -25,6 +25,10 @@ acting; if unsure, ask the lead.
   bootstrap that creates the foundations and the initial component set.
 - **Page agent** — works inside one assigned page (or page set). Consumes the library by
   instancing; never writes file-global state.
+- **Reviewer** (`/reviewer`) — read-only auditor. May *inspect* any page (reads and
+  screenshots only); never edits Figma and never writes the records or any file. Produces a
+  findings report and routes each fix to the Librarian (file-global) or the owning page
+  agent (page-local).
 
 ---
 
@@ -104,7 +108,9 @@ flags it. The human decides later whether it's promoted into the library or kept
 **How to flag it (do both)**
 
 - Leave the visual marker in place (the `CANDIDATES` frame + name prefix).
-- Post **one item to the shared task list**, labeled `candidate-review`, with this schema:
+- Write **one inbox file** to **`candidates/inbox/<your-page>--<candidate-name>.md`** in the
+  repo — this is the durable notification channel (a session-scoped task list is invisible
+  to other sessions and dies with yours; a file in git does not). Contents = this schema:
 
   ```
   candidate-review
@@ -116,11 +122,12 @@ flags it. The human decides later whether it's promoted into the library or kept
   new_values:  <none | list each raw value not bound to a variable>
   ```
 
-Raising the task-list item is the *only* notification — do not also edit `CANDIDATES.md`
-(that's the Librarian's single-writer record). Because the task list is ephemeral across
-separate sessions, also **report the candidate to the human** as the real handoff. Expect
-duplicates across pages (two agents may both need a "pill badge"); that's fine — dedup happens
-at human review.
+The inbox file is the *only* record you write — do not also edit `CANDIDATES.md` (that's the
+Librarian's single-writer record; each agent writes only its **own** inbox files, so the
+single-writer rule holds per file). Also mention the candidate in your report to the human.
+Expect duplicates across pages (two agents may both need a "pill badge"); that's fine —
+dedup happens at human review. As a safety net, `/reconcile` also sweeps for `CANDIDATE — *`
+frames that never got an inbox file — but don't rely on the net: write the file.
 
 ---
 
@@ -128,8 +135,10 @@ at human review.
 
 - **Sole writer** of everything in the single-writer invariant list.
 - **Bootstrap the file** with `/startup` on a new project (foundations → Sections → core set).
-- **Record candidates.** When a `candidate-review` item appears, add a row to `CANDIDATES.md`
-  with status `pending-review`. Never auto-decide.
+- **Record candidates.** When an inbox file appears in `candidates/inbox/` (or the
+  reconciliation sweep finds an unregistered `CANDIDATE — *` frame), add a row to
+  `CANDIDATES.md` with status `pending-review`, then delete the inbox file — the register
+  row supersedes it. Never auto-decide.
 - **On a human `promote` decision:** build the real component in the correct Section of the
   library page following the skill's naming/variant rules, bind variables + text styles + the
   spacing scale, add its entry to `SKILL.md`, set the register row to `promoted`, and
@@ -171,28 +180,35 @@ The loop's job is **documentation and sync**, not promotion. Human-gated states 
 **Goal (stop condition — all true):**
 
 1. No candidate is in status `promote` (every approved candidate has been built → `promoted`).
-2. Every component on the library page has a matching `SKILL.md` entry.
+2. Every component on the library page has a matching `SKILL.md` entry. *Documented-by-design
+   exclusions (not violations):* a bulk icon library counts as documented by its single
+   family line; **Sandbox / WIP** is intentionally not itemized; assembled example patterns
+   are recipes, not entries.
 3. Every `SKILL.md` entry maps to a real component on the library page.
 4. `pending-review` and `one-off` rows are **ignored** — they are *not* violations and do *not*
    keep the loop running.
+5. Every file in `candidates/inbox/` and every frame named `CANDIDATE — *` in the Figma file
+   has a matching `CANDIDATES.md` row — the loop **records** missing ones as `pending-review`
+   (recording is not deciding; the status decision stays with the human).
 
 This makes "pending review" a valid resting state. The loop scans the library against the
-records, builds/docs anything in `promote`, fixes drift, and stops — it never re-flags a
-`one-off`, and it never waits on a human decision. It is idempotent — safe to run repeatedly.
+records, builds/docs anything in `promote`, fixes drift, records unregistered candidates, and
+stops — it never re-flags a `one-off`, and it never waits on a human decision. It is
+idempotent — safe to run repeatedly.
 
 ---
 
 ## Quick reference
 
-| Action | Page agent | Librarian |
-|---|---|---|
-| Run one-time `/startup` bootstrap | ❌ | ✅ |
-| Instance existing components on own page | ✅ | ✅ |
-| Edit another agent's page | ❌ | only to swap a promoted candidate (coordinate first) |
-| Create main component / variant on the library page | ❌ | ✅ |
-| Add/edit variables, text styles, or effect styles | ❌ | ✅ |
-| Publish the library | ❌ | ✅ |
-| Build a page-local candidate + raise callout | ✅ | n/a |
-| Write `CANDIDATES.md` / `SKILL.md` / `PROJECT.md` | ❌ | ✅ |
-| Promote a candidate | ❌ (humans only) | executes the human's decision |
-| Run reconciliation loop | ❌ | ✅ |
+| Action | Page agent | Reviewer | Librarian |
+|---|---|---|---|
+| Run one-time `/startup` bootstrap | ❌ | ❌ | ✅ |
+| Instance existing components on own page | ✅ | ❌ (read-only) | ✅ |
+| Edit another agent's page | ❌ | ❌ (may **read** any page) | only to swap a promoted candidate (coordinate first) |
+| Create main component / variant on the library page | ❌ | ❌ | ✅ |
+| Add/edit variables, text styles, or effect styles | ❌ | ❌ | ✅ |
+| Publish the library | ❌ | ❌ | ✅ |
+| Build a page-local candidate + write inbox file | ✅ | ❌ (flags untracked primitives in its report) | n/a |
+| Write `CANDIDATES.md` / `SKILL.md` / `PROJECT.md` | ❌ | ❌ | ✅ |
+| Promote a candidate | ❌ (humans only) | ❌ (humans only) | executes the human's decision |
+| Run reconciliation loop | ❌ | ❌ | ✅ |

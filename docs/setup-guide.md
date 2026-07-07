@@ -143,8 +143,10 @@ candidates from different pages are normal too; you dedup them when you review.
   whole safety model.
 - **Don't trust "everything's bound" — verify.** Before promoting a candidate or publishing, have
   the Librarian read the actual nodes and confirm zero raw values.
-- **The task list doesn't survive across sessions.** A page agent's *report to you* is the real
-  candidate handoff; make sure the Librarian records it in `CANDIDATES.md` promptly.
+- **A session task list doesn't survive across sessions.** That's why candidates are handed off
+  as **files in `candidates/inbox/`** — durable in git, visible to the Librarian whenever it next
+  runs. Make sure the Librarian records them in `CANDIDATES.md` promptly (and deletes the inbox
+  file once recorded).
 - **Commit after each decision** — a promotion, a foundations change, the whole bootstrap. The
   repo is your decision log; Figma holds the artwork.
 - **Unsure about the brand? Take the default.** Swapping the primary color or a font later is a

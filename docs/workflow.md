@@ -35,8 +35,9 @@ write the library. Pages isolate layouts; they do **not** isolate the library.
    several in parallel only if they're on **different** pages.
 3. **Page agent builds** by instancing existing components (reuse-first). Approve its plan, let it
    build, read its report.
-4. **Missing primitive?** The page agent builds a **page-local candidate** (not a component) and
-   reports it — it does not block. You carry that report to the Librarian.
+4. **Missing primitive?** The page agent builds a **page-local candidate** (not a component),
+   writes an inbox file to `candidates/inbox/`, and reports it — it does not block. The inbox
+   file is what reaches the Librarian; your nudge just speeds it up.
 5. **Librarian records + you decide** → promote or one-off (below).
 6. **Reconcile + commit** at the right moments (below).
 7. **Close the page agent** once its candidate is recorded. Keep the Librarian.
@@ -51,10 +52,10 @@ surface gaps quickly. That's the library filling out; it slows as the core matur
 ```
 page agent hits a gap
    → builds page-local CANDIDATE — <family> / <name>  (token-bound, in a CANDIDATES frame)
-   → reports it to you  (the task list is NOT reliable across sessions — see gotchas)
+   → writes candidates/inbox/<page>--<name>.md  (durable handoff) and reports it to you
         ↓
-you hand the candidate to the Librarian
-   → Librarian records it in CANDIDATES.md as `pending-review`
+Librarian reads the inbox (or /reconcile sweeps it)
+   → records it in CANDIDATES.md as `pending-review`, deletes the inbox file
         ↓
 YOU decide (agents never self-promote):
    • PROMOTE  → Librarian builds it in the right Section of the library page, binds everything,
@@ -94,8 +95,10 @@ Before approving a promote, make the Librarian:
 
 Run it (Librarian session) after any promotion, after editing the library, or any time you want to
 confirm the library and records agree. A clean pass means:
-- every in-Section component is in the `SKILL.md` inventory (leg 2 green)
+- every in-Section component is in the `SKILL.md` inventory (leg 2 green; bulk icon libraries,
+  Sandbox / WIP, and assembled examples are excluded by design)
 - every `SKILL.md` inventory entry maps to a live component (leg 3 green)
+- `candidates/inbox/` is empty and every `CANDIDATE — *` frame has a register row (leg 5 green)
 - one-off candidates are **silently ignored** (not flagged, not re-surfaced)
 - no `pending-review` churn
 
@@ -127,10 +130,10 @@ git log --oneline              # sanity-check order
 
 - **Foundations before components.** On a new library, build variables/styles first; a component
   built before its tokens exist carries raw values you must retrofit later.
-- **The task list is ephemeral across separate sessions.** Candidate items posted in one page-agent
-  session don't reach the Librarian's list. The durable record is `CANDIDATES.md` + the Figma node
-  itself — so record candidates promptly, and treat the page agent's **report to you** as the real
-  handoff, not the task list.
+- **A session task list is ephemeral across separate sessions.** Candidate items posted in one
+  page-agent session never reach the Librarian's list — which is why the handoff is a **file in
+  `candidates/inbox/`** (durable in git), backed up by the `/reconcile` sweep for `CANDIDATE — *`
+  frames. Record candidates promptly and delete the inbox file once registered.
 - **"Deleted" in Figma can be a rename.** A node keeps its id through a rename but not a deletion —
   verify removals **by node id**, not by name.
 - **Agents' self-reports of cleanliness aren't reliable.** Verify token-binding and "zero raw

@@ -2,9 +2,9 @@
 
 **Librarian-owned.** This file is file-global state: only the Librarian writes it
 (see [CLAUDE.md](CLAUDE.md), single-writer invariant). Page agents never edit this
-file — they raise a `candidate-review` item on the shared task list (and report it to
-the human) instead, and the Librarian records it here as a new row with status
-`pending-review`.
+file — they write a `candidate-review` inbox file to `candidates/inbox/` (and mention
+it in their report to the human) instead, and the Librarian records it here as a new
+row with status `pending-review`, deleting the inbox file once recorded.
 
 One row per candidate. **No candidates yet** — this table fills in once page agents start
 building screens and hit primitives the library doesn't have. On a freshly bootstrapped

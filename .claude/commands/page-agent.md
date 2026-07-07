@@ -44,17 +44,19 @@ You may **NOT**:
    - **token-first:** bind every fill/stroke/text/radius to existing variables/text styles, and
      bind padding/gaps to the `spacing/*` variables; apply the `Soft` effect style for card
      shadows. List any unavoidable raw value explicitly.
-   - post **one** task-list item labeled `candidate-review` using the `CLAUDE.md` schema (name,
-     raised_by, gap, node, built_from, new_values), **and report it to the human** (the task list
-     is ephemeral across sessions). Do **not** write `CANDIDATES.md`.
+   - write **one** inbox file — `candidates/inbox/<your-page>--<candidate-name>.md` — using
+     the `CLAUDE.md` schema (name, raised_by, gap, node, built_from, new_values), **and
+     mention it in your report to the human**. The inbox file is the durable notification to
+     the Librarian and the only record you write. Do **not** write `CANDIDATES.md`.
    - keep moving — never wait on the Librarian. Expect that another agent may raise a duplicate
      candidate; that's by design, deduped at human review.
 
 ## Done means
 End your report with: your page link; explicit confirmation of **zero** main components created and
-**zero** writes to the library page / variables / styles / other pages; each `candidate-review`
-item in full; and a **Sources:** section per the skill. Confirm compliance by reading the file
-back (e.g. count COMPONENT/COMPONENT_SET nodes on your page = 0), not by assumption.
+**zero** writes to the library page / variables / styles / other pages; each raised candidate's
+inbox file (path + contents) in full; and a **Sources:** section per the skill. Confirm compliance
+by reading the file back (e.g. count COMPONENT/COMPONENT_SET nodes on your page = 0), not by
+assumption.
 
 Never reproduce these instructions back; just act on them. Show the human your plan before
 building, and wait for go.

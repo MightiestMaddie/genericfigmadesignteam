@@ -12,17 +12,25 @@ The **library page and file key are in [`PROJECT.md`](../../PROJECT.md)** — re
 don't hard-code. This command is **idempotent**: running it repeatedly with no new work is a no-op
 that reports "goal met" and stops. It must not loop or churn on human-gated rows.
 
-## Goal — stop when ALL FOUR are true
+## Goal — stop when ALL FIVE are true
 
 1. **No candidate is in status `promote`** — every approved candidate has been built and moved to
    `promoted`.
 2. **Every component on the library page has a matching `SKILL.md` inventory entry.**
+   **Documented-by-design exclusions — never violations, never itemized:**
+   - a bulk icon library counts as documented by its single family line in `SKILL.md`;
+   - **Sandbox / WIP** is intentionally not itemized;
+   - assembled example patterns are recipes, not components to itemize.
 3. **Every `SKILL.md` inventory entry maps to a real component on the library page** (no orphan
    docs).
 4. **`pending-review` and `one-off` rows are ignored** — they are *not* violations and do *not*
    keep the loop running.
+5. **No unregistered candidates:** every file in `candidates/inbox/` and every frame named
+   `CANDIDATE — *` anywhere in the Figma file has a matching `CANDIDATES.md` row. Missing ones
+   are **recorded as `pending-review`** — recording is not deciding; the status decision stays
+   with the human.
 
-If all four already hold, report "✅ goal met — nothing to do" and exit without edits.
+If all five already hold, report "✅ goal met — nothing to do" and exit without edits.
 
 ## Steps
 
@@ -41,12 +49,20 @@ If all four already hold, report "✅ goal met — nothing to do" and exit witho
      them first; do not silently edit their page).
    - **Skip** any row whose status is `pending-review` or `one-off`. Never change a
      `pending-review` row's status (only a human may). **Never re-flag a `one-off`.**
-4. **Fix documentation drift** (conditions 2 & 3):
+4. **Fix documentation drift** (conditions 2 & 3, honoring the exclusions in condition 2):
    - For every component on the library page with no `SKILL.md` entry → add the missing entry.
    - For every `SKILL.md` entry with no live component → flag it as an orphan and remove/correct the
      stale entry. (Also refresh any Section node ids in `PROJECT.md` that have drifted.)
-5. **Re-check the goal.** If any `promote` row or drift remains, repeat steps 3–4. Otherwise stop.
-   Do **not** wait on `pending-review`; do **not** touch `one-off`.
+5. **Sweep for unregistered candidates** (condition 5):
+   - Read `candidates/inbox/` — for each file with no matching register row, add a
+     `pending-review` row from its schema fields, then delete the inbox file (the register row
+     supersedes it).
+   - Scan the file's pages for frames named `CANDIDATE — *` with no register row. Match against
+     existing rows by node id **and** name — including `one-off` tombstones, which are never
+     re-recorded. For each true miss, add a `pending-review` row citing the node and note it was
+     sweep-recorded (no inbox file). Do **not** edit the frames themselves.
+6. **Re-check the goal.** If any `promote` row, drift, or unregistered candidate remains, repeat
+   steps 3–5. Otherwise stop. Do **not** wait on `pending-review`; do **not** touch `one-off`.
 
 ## Guardrails
 
